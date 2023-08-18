@@ -46,7 +46,7 @@ jobs:
 
           aria2c https://github.com/dabao1955/android_kernel_OPPO_PEQM00/archive/refs/heads/4.19-ksu-dev.zip
 
-          unzip android_kernel_OPPO_PEQM00-4.19-kdu-dev.zip
+          unzip android_kernel_OPPO_PEQM00-4.19-ksu-dev.zip
 
           mv android_kernel_OPPO_PEQM00-4.19-ksu-dev kernel-4.19 -v
 
