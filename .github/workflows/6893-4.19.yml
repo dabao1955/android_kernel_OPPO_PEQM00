@@ -1,0 +1,91 @@
+name: build kernel - OPPO Reno6 Pro
+
+on:
+
+  workflow_dispatch:
+
+jobs:
+
+  build-kernel:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Setup environment
+
+        run: |
+
+          sudo apt-get update
+
+          sudo apt-get install ccache libncurses5-dev libncurses-dev libssl-dev device-tree-compiler bc cpio lib32ncurses5-dev lib32z1 build-essential binutils bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev git aria2 -y
+
+      - name: Pull toolchain
+
+        run: |
+
+          cd $HOME
+
+          git clone --depth=1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9 aarch64-linux-android-4.9
+
+          git clone --depth=1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9 arm-linux-androideabi-4.9
+
+      - name: Pull clang
+
+        run: |
+          
+          cd $HOME
+
+          git clone https://github.com/dpkg123/clang --depth=2
+
+      - name: Pull kernel source
+
+        run: |
+
+          aria2c https://github.com/dabao1955/android_kernel_OPPO_PEQM00/archive/refs/heads/4.19.zip
+
+          unzip android_kernel_OPPO_PEQM00-4.19.zip
+
+          mv android_kernel_OPPO_PEQM00-4.19 kernel-4.19 -v
+
+      - name: Pull kernel vendor source
+
+        run: |
+
+          git clone https://github.com/oppo-source/android_kernel_modules_oppo_mtk_4.19/
+
+          cp android_kernel_modules_oppo_mtk_4.19/vendor ./ -R
+
+          mkdir -p -v ../vnd
+
+          cp android_kernel_modules_oppo_mtk_4.19/vendor ../vnd -R
+
+          cp android_kernel_modules_oppo_mtk_4.19/vendor/oplus/kernel_4.19/audio/ kernel-4.19/sound/soc/codecs -R -v
+
+      - name: Setup ccache
+
+        uses: hendrikmuhs/ccache-action@main
+
+        with: 
+
+         max-size: 8G
+
+      - name: Build KernelSU kernel - OPPO Reno 6
+
+        run: |
+
+          cd /home/runner/work/android_kernel_OPPO_PEQM00/android_kernel_OPPO_PEQM00/kernel-4.19
+          
+          bash build_kernel.sh
+
+      - name: Upload kernel to artifact
+
+        uses: actions/upload-artifact@v3
+
+        with:
+
+          name: kernel
+
+          path: kernel-4.19/out/arch/arm64/boot/*
