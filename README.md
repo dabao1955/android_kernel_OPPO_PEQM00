@@ -20,11 +20,13 @@ Support kernelSU kernel source code for MediaTek devices in the OPPO Reno series
 
 # Status
 
-[![Reno6](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6877-4.19-noksu.yml/badge.svg?branch=Github_Action_Mode)](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6877-4.19-noksu.yml)
-[![Reno6-ksu](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6877-4.19.yml/badge.svg?branch=Github_Action_Mode)](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6877-4.19.yml)
-[![Reno6Pro](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6893-4.19-noksu.yml/badge.svg?branch=Github_Action_Mode)](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6893-4.19-noksu.yml)
-[![Reno6Pro-ksu](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6893-4.19.yml/badge.svg?branch=Github_Action_Mode)](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6893-4.19.yml)
+[![build kernel - OPPO Reno6](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6877-4.19-noksu.yml/badge.svg)](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6877-4.19-noksu.yml)
 
+[![build KSU kernel - OPPO Reno6](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6877-4.19.yml/badge.svg)](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6877-4.19.yml)
+
+[![build kernel - OPPO Reno6 Pro](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6893-4.19-noksu.yml/badge.svg)](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6893-4.19-noksu.yml)
+
+[![build KSU kernel - OPPO Reno6 Pro](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6893-4.19.yml/badge.svg)](https://github.com/dabao1955/android_kernel_OPPO_PEQM00/actions/workflows/6893-4.19.yml)
 
 ![Downloads](https://img.shields.io/github/downloads/dabao1955/android_kernel_OPPO_PEQM00/total)  
 
