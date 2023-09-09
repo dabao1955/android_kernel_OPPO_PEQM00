@@ -1,0 +1,32 @@
+--- 6877-4.19-noksu.yml	2023-09-09 21:16:23.917200210 +0800
++++ 6877-4.19-noksu.yml	2023-09-09 21:18:33.377200218 +0800
+@@ -12,7 +12,8 @@
+ 
+     steps:
+ 
+-      - uses: actions/checkout@v3
++      - name: Checkout Repo
++        uses: actions/checkout@v4
+ 
+       - name: Setup environment
+ 
+@@ -46,7 +47,7 @@
+ 
+           aria2c https://github.com/dabao1955/android_kernel_OPPO_PEQM00/archive/refs/heads/4.19-ksu-dev.zip
+ 
+-          unzip android_kernel_OPPO_PEQM00-4.19-ksu-dev.zip
++          unzip android_kernel_OPPO_PEQM00-4.19-ksu-dev.zip -q
+ 
+           mv android_kernel_OPPO_PEQM00-4.19-ksu-dev kernel-4.19 -v
+ 
+@@ -56,9 +57,7 @@
+ 
+           git clone https://github.com/oppo-source/android_kernel_modules_oppo_mtk_4.19/
+ 
+-          cp android_kernel_modules_oppo_mtk_4.19/vendor ./ -R
+-
+-          mkdir -p -v ../vnd
++          sleep 1s
+ 
+           cp android_kernel_modules_oppo_mtk_4.19/vendor ../vnd -R
+ 

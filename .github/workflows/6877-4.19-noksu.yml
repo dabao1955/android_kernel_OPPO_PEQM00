@@ -12,7 +12,8 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v3
+     -  name: Checkout Repo
+        uses: actions/checkout@v4
 
       - name: Setup environment
 
@@ -46,7 +47,7 @@ jobs:
 
           aria2c https://github.com/dabao1955/android_kernel_OPPO_PEQM00/archive/refs/heads/4.19.zip
 
-          unzip android_kernel_OPPO_PEQM00-4.19.zip
+          unzip -q android_kernel_OPPO_PEQM00-4.19.zip 
 
           mv android_kernel_OPPO_PEQM00-4.19 kernel-4.19 -v
 
@@ -55,10 +56,6 @@ jobs:
         run: |
 
           git clone https://github.com/oppo-source/android_kernel_modules_oppo_mtk_4.19/
-
-          cp android_kernel_modules_oppo_mtk_4.19/vendor ./ -R
-
-          mkdir -p -v ../vnd
 
           cp android_kernel_modules_oppo_mtk_4.19/vendor ../vnd -R
 
