@@ -1,9 +1,8 @@
 #!/bin/bash
 
-set -eu
+set -eux
 test -d out || mkdir out -p -v
 test -d ../vnd || mkdir vnd -p -v
-test -d ../vendor/mediatek/kernel_modules/gpu/gpu_mali/mali_valhall/mali-r25p0 || cp -r -v ../vendor/mediatek/kernel_modules/gpu/gpu_mali/mali_valhall/mali-r25p0 drivers/gpu/mediatek/gpu_mali/mali_valhall/
 
 BUILD_CROSS_COMPILE=$HOME/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 CLANG_PATH=$HOME/clang/bin
