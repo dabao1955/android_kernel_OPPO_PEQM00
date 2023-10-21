@@ -57,15 +57,6 @@ jobs:
 
           cp android_kernel_modules_oppo_mtk_4.19/vendor/oplus/kernel_4.19/audio/ kernel-4.19/sound/soc/codecs -R -v
 
-      - name: Sync KernelSU
-
-        run: |
-
-          export KBUILD_BUILD_USER="dabao1955"
-          
-          cd /home/runner/work/android_kernel_OPPO_PEQM00/android_kernel_OPPO_PEQM00/kernel-4.19
-
-          bash setup.sh
       - name: Setup ccache
 
         uses: hendrikmuhs/ccache-action@main
