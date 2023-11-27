@@ -71,7 +71,8 @@ jobs:
         uses: hendrikmuhs/ccache-action@main
 
         with: 
-          max-size: 8G
+          max-size: 4G
+          key: 6893-ksu-${{ github.job }}-${{ matrix.os }}
 
       - name: Build KernelSU kernel - OPPO Reno 6 Pro
 
