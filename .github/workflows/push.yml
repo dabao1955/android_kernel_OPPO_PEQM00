@@ -1,0 +1,18 @@
+name: Build-kernel
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  r6-noksu:
+    uses: ./.github/workflows/6877-4.19-noksu.yml
+    secrets: inherit
+  r6-ksu:
+    uses: ./.github/workflows/6877-4.19.yml
+    secrets: inherit
+  r6p-noksu:
+    uses: ./.github/workflows/6893-4.19-noksu.yml
+    secrets: inherit
+  r6p-ksu:
+    uses: ./.github/workflows/6893-4.19.yml
+    secrets: inherit
