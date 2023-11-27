@@ -15,12 +15,12 @@ export ARCH=arm64
 export PATH=${CLANG_PATH}:${PATH}
 
 make -j$(nproc) -C $(pwd) O=$(pwd)/out CROSS_COMPILE=$BUILD_CROSS_COMPILE CLANG_TRIPLE=$CLANG_TRIPLE CROSS_COMPILE_ARM32=$CROSS_COMPILE_ARM32 \
-    CC=clang \
+    CC="ccache clang" \
     vendor/full/r6p_nodtb_defconfig
 
 A=$(date +%s)
 make -j$(nproc) -C $(pwd) O=$(pwd)/out CROSS_COMPILE=$BUILD_CROSS_COMPILE CLANG_TRIPLE=$CLANG_TRIPLE CROSS_COMPILE_ARM32=$CROSS_COMPILE_ARM32 \
-    CC=clang \
+    CC="ccache clang" \
     -Werror \
     2>&1 | tee build.txt
 B=$(date +%s)
