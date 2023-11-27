@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -eux
 test -d out || mkdir out -p -v
 test -d ../vendor/mediatek/kernel_modules/gpu/gpu_mali/mali_valhall/mali-r25p0 || cp -r -v ../vendor/mediatek/kernel_modules/gpu/gpu_mali/mali_valhall/mali-r25p0 drivers/gpu/mediatek/gpu_mali/mali_valhall/
 
@@ -12,9 +12,10 @@ CLANG_TRIPLE=aarch64-linux-gnu-
 
 export ARCH=arm64
 export PATH=${CLANG_PATH}:${PATH}
+export USE_CCACHE=1
 
 make -j$(nproc) -C $(pwd) O=$(pwd)/out CROSS_COMPILE=$BUILD_CROSS_COMPILE CLANG_TRIPLE=$CLANG_TRIPLE CROSS_COMPILE_ARM32=$CROSS_COMPILE_ARM32 \
-    CC="ccache clang" \
+    CC=clang \
     vendor/full/r6p_nodtb_defconfig
 
 A=$(date +%s)
