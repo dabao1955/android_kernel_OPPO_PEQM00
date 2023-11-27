@@ -3,6 +3,7 @@ name: build kernel - OPPO Reno6 Pro
 on:
 
   workflow_dispatch:
+  workflow_call:
 
 jobs:
 
