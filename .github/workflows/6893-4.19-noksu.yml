@@ -63,7 +63,8 @@ jobs:
 
         with: 
 
-         max-size: 8G
+         max-size: 4G
+  
 
       - name: Build KernelSU kernel - OPPO Reno 6
 
