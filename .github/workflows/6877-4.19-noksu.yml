@@ -83,6 +83,6 @@ jobs:
 
         with:
 
-          name: kernel
+          name: kernel-6877-4.19
 
           path: kernel-4.19/out/arch/arm64/boot/*

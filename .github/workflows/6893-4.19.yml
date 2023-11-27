@@ -95,7 +95,7 @@ jobs:
 
         with:
 
-          name: kernel
+          name: kernel-6893-4.19-ksu
 
           path: kernel-4.19/out/arch/arm64/boot/*
 
