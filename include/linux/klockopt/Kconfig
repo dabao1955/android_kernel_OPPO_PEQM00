@@ -1,0 +1,5 @@
+config KERNEL_LOCK_OPT
+	tristate "config kernel lock opt"
+	default n
+	help
+	uxmutex inplement & record rwsem owners

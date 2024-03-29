@@ -1,0 +1,4 @@
+#ifndef __MTK_CHARGING_H__
+#define __MTK_CHARGING_H__
+#define MAX_CHARGE_TEMPERATURE  70
+#define MIN_CHARGE_TEMPERATURE  0
