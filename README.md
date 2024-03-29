@@ -16,6 +16,8 @@ Support kernelSU kernel source code for MediaTek devices in the OPPO Reno series
 - Readme: rt
 - 4.19: default kernel source branch
 - 4.19-ksu-dev: kernel source branch with KernelSU
+- 4.19_reno6 reno6 krenel from oppo/mt6877_t_13.1.0_reno6_5g
+- 4.19_reno6pro reno6pro kernel
 - oplus-vendor: oplus vendor source branch
 
 # Status
