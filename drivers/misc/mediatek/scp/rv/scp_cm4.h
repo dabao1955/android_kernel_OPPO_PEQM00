@@ -1,0 +1,1 @@
+../../../../../drivers/misc/mediatek/scp/include/scp_cm4.h
