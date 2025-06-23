@@ -10,7 +10,7 @@
 #include <../fs/proc/internal.h>
 #include <../kernel/sched/sched.h>
 
-#include <soc/oplus/healthinfo.h>
+#include "healthinfo.h"
 
 void update_jank_trace_info(struct task_struct *tsk, int trace_type, unsigned int cpu, u64 delta)
 {

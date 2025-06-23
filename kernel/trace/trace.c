@@ -56,7 +56,7 @@
 #endif
 
 /* #ifdef OPLUS_BUG_STABILITY */
-#include <soc/oplus/system/oplus_project.h>
+#include "oplus_project.h"
 /* #endif */
 
 /*

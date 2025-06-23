@@ -1,5 +1,5 @@
 #include <linux/delay.h>
-#include <soc/oplus/healthinfo.h>
+#include "healthinfo.h"
 #include <linux/kernel_stat.h>
 #include <linux/version.h>
 
